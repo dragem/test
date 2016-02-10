@@ -4,6 +4,9 @@ require_once(__DIR__.'/../src/DwdUtils.php');
 
 use Test\DwdUtils;
 
+/**
+ * Class DwdUtilsTest
+ */
 class DwdUtilsTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -28,6 +31,9 @@ class DwdUtilsTest extends PHPUnit_Framework_TestCase
         $this->assertNotEquals($expected, $result);
     }
 
+    /**
+     * @return array
+     */
     public function excerptSuccessProvider()
     {
         return array(
@@ -35,17 +41,20 @@ class DwdUtilsTest extends PHPUnit_Framework_TestCase
             array('erwin', 4, '..', '..'),
             array('erwin', 5, '..', 'erwin'),
             array('erwin', 6, '..', 'erwin'),
-            array('erwin ter hoorn boer', 8, '..', 'erwin..'),
-            array('erwin ter hoorn boer', 10, '..', 'erwin ter..'),
-            array('erwin ter hoorn boer', 16, '..', 'erwin ter hoorn..'),
-            array('erwin ter hoorn boer', 20, '..', 'erwin ter hoorn boer'),
-            array('erwin ter hoorn boer', 4, '..', '..'),
-            array('erwin ter hoorn boer', 6, '..', 'erwin..'),
-            array('erwin ter hoorn boer', 4, '..', '..'),
-            array('erwin ter hoorn boer', 4, 'erwin', 'erwin'),
+            array('erwin ten hoorn boer', 8, '..', 'erwin..'),
+            array('erwin ten hoorn boer', 10, '..', 'erwin ten..'),
+            array('erwin ten hoorn boer', 16, '..', 'erwin ten hoorn..'),
+            array('erwin ten hoorn boer', 20, '..', 'erwin ten hoorn boer'),
+            array('erwin ten hoorn boer', 4, '..', '..'),
+            array('erwin ten hoorn boer', 6, '..', 'erwin..'),
+            array('erwin ten hoorn boer', 4, '..', '..'),
+            array('erwin ten hoorn boer', 4, 'erwin', 'erwin'),
         );
     }
 
+    /**
+     * @return array
+     */
     public function excerptFailureProvider()
     {
         return array(
